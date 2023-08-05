@@ -1,0 +1,13 @@
+1.  bitset<16>one(string("011"));
+2. bit work as array :   one[3]=1;
+
+3. for(size_t i=0;i<sizeof(one);i++)
+   {
+      cout<<one.test(i)<<endl;
+   }
+
+
+4. for print true/false .using boolalpha
+   cout << boolalpha;
+  for (std::size_t i=0; i<foo.size(); ++i)
+    std::cout << foo.test(i) << '\n';
