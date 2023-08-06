@@ -22,12 +22,10 @@ struct Node
 
 
 
-// find function for find level of  a node;
-
-int Level(Node* root,Node* a,int lev)
+int Level(Node* root,int a,int lev)
 {
      if(root==NULL) return 0;
-     if(root==a) return lev;
+     if(root->data==a) return lev;
      
      // Return level if Node is present in left subtree
      int  l= Level(root->left,a,lev+1);
@@ -46,30 +44,36 @@ int Level(Node* root,Node* a,int lev)
 
 
 // Recursive function to check if two Nodes are siblings
-bool isSibling(struct Node* root, struct Node* a,
-              struct Node* b)
+bool isSibling(struct Node* root, int  a,
+              int  b)
 {
     // Base case
     if (root == NULL)
         return false;
+        
+        
+   if(root->left==NULL || root->right==NULL)
+   {
+       return false;
+   }
  
-    return ((root->left == a && root->right == b)
-            || (root->left == b && root->right == a)
+    return ((root->left->data == a && root->right->data == b)
+            || (root->left->data == b && root->right->data == a)
             || isSibling(root->left, a, b)
             || isSibling(root->right, a, b));
 }
 
-
-
-bool isCousin(Node* root,Node* a,Node* b)
+bool isCousins(Node *root, int a, int b)
 {
-     if((Level(root,a,1)== Level(root,b,1)) && !(isSibling(root, a, b)))
+   if((Level(root,a,1)== Level(root,b,1)) && !(isSibling(root, a, b)))
      {
             return true;
      }
 
      return false;
 }
+
+
 
 int main()
 {
@@ -87,12 +91,8 @@ int main()
 
 
 
-    struct Node *Node1, *Node2;
-    Node1 = root->left->left;
-    Node2 = root->right->right;
-     
 
-    if (isCousin(root, Node1, Node2))
+    if (isCousins(root, 4,5))
         printf("Yes\n");
     else
         printf("No\n");
