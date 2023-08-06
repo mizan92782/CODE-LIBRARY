@@ -61,6 +61,7 @@ bool isSumtree(Node* root)
 int main()
 {
 
+    //https://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-sumtree/
      struct Node* root=NULL;
       root= createNewNode(26);
       root->left= createNewNode(10);

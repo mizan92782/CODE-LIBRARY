@@ -18,12 +18,15 @@ git config user.name/user.email
 
 
 *** rempter repoeototy
- git remote to check
- git remote link
+ git remote to check  ==>git remote -v
+ git remote link add -> git remote add origin link
  git clone link
+ switch to main branch -> git checkout -b main
+ pugg : git push -f origin main
 
 
-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
+
+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
 
 
 */
