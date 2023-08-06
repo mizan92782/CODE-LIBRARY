@@ -83,37 +83,57 @@ void printcurrentlevel(Node* root,int level)
 
 //************
 // Iterative method to find height of Binary Tree
-void printLevelOrder_stl(Node* root)
+void levelOrder_stl(Node *root)
 {
-    // Base Case
-    if (root == NULL)
-        return;
+    if (root == NULL) return;
  
-    // Create an empty queue for level order traversal
-    queue<Node*> q;
+    // Create an empty queue for
+    // level order traversal
+    queue<Node *> q;
+     
+    // to store front element of
+    // queue.
+    Node *curr;
  
-    // Enqueue Root and initialize height
+    // Enqueue Root and NULL node.
     q.push(root);
+    q.push(NULL);
  
-    while (q.empty() == false) {
-         
-        // Print front of queue and remove it from queue
-        Node* node = q.front();
-        cout << node->data << " ";
+    while (q.size() > 1)
+    {
+        curr = q.front();
         q.pop();
- 
-        // Enqueue left child
-        if (node->left != NULL)
-            q.push(node->left);
- 
-        // Enqueue right child
-        if (node->right != NULL)
-            q.push(node->right);
+         
+        // condition to check
+        // occurrence of next
+        // level.
+        if (curr == NULL)
+        {
+           q.push(NULL);
+           cout << "\n";
+        }
+         
+        else {
+             
+            // pushing left child of
+            // current node.
+            if(curr->left)
+            q.push(curr->left);
+             
+            // pushing right child of
+            // current node.
+            if(curr->right)
+            q.push(curr->right);
+             
+            cout << curr->data << " ";
+        }
     }
 }
-
+ 
 int main()
 {
+
+    //https://www.geeksforgeeks.org/level-order-traversal-line-line-set-3-using-one-queue/
 
     struct Node* root=NULL;
       root= createNewNode(1);
@@ -129,7 +149,7 @@ int main()
 
 
 
-      printLevel(root);
+      levelOrder_stl(root);
 
 
 }

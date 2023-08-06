@@ -75,11 +75,93 @@ bool isCousins(Node *root, int a, int b)
 
 
 
+/// ***********stl
+bool isCousin_stl(Node* root,Node* a,Node* b)
+{
+
+
+    //https://www.geeksforgeeks.org/check-if-two-nodes-are-cousins-in-a-binary-tree-set-2/
+    
+    if (root == NULL)
+        return false;
+
+
+
+     queue<pair<Node* ,Node*>>chi_par;
+     
+     Node* rootPar= createNewNode(-1);
+     chi_par.push(make_pair(root,rootPar));
+
+
+     pair<Node*,Node*>element;
+
+     int quesize;
+
+     while (!chi_par.empty())
+     {
+        
+          quesize=chi_par.size();
+           Node* parA=NULL;
+           Node* parB=NULL;
+
+          while (quesize)
+          {
+               element=chi_par.front();
+               chi_par.pop();
+
+
+               if(element.first->data==a->data)
+               {
+                  parA=element.second;
+               }
+
+               if(element.first->data==b->data)
+               {
+                  parB=element.second;
+               }
+
+
+               if(element.first->left)
+               {
+                chi_par.push(make_pair(element.first->left,element.first));
+               }
+               
+
+
+               if(element.first->right)
+               {
+                chi_par.push(make_pair(element.first->right,element.first));
+               }
+
+               quesize--;
+
+               if(parA && parB) break;
+          }
+
+          
+          if(parA && parB)
+          {
+            return parA != parB;
+          }
+         
+
+
+         if(parA || parB)
+         {
+            return false;
+         }
+          
+     }
+
+     return false;
+     
+}
+
 int main()
 {
 
      struct Node* root=NULL;
-     root=createNewNode(1);
+     root = createNewNode(1);
     root->left = createNewNode(2);
     root->right = createNewNode(3);
     root->left->left = createNewNode(4);
@@ -90,12 +172,11 @@ int main()
     root->right->left->right = createNewNode(8);
 
 
-
-
-    if (isCousins(root, 4,5))
-        printf("Yes\n");
-    else
-        printf("No\n");
+struct Node *Node1, *Node2;
+    Node1 = root->left->left;
+    Node2 = root->right->right;
+ 
+    isCousin_stl(root, Node1, Node2) ? puts("Yes") : puts("No");
 
      
 
