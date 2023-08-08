@@ -27,7 +27,7 @@ string dupSubUtil(Node *root)
 {
 
     // if this is null
-	if(root==NULL) return "";
+	if(root==NULL) return "$";
          
          string one= dupSubUtil(root->left); 
          string two =dupSubUtil(root->right);
@@ -35,7 +35,7 @@ string dupSubUtil(Node *root)
 
          //making in order string
          //changing format we can make it preoeder or post oeder
-         string add= one+(root->key)+two;
+         string add= (root->key)+one+two;
          cout<<add<<endl;
          
         

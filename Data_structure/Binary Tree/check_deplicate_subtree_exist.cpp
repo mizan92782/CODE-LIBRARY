@@ -22,36 +22,55 @@ Node* newNode(char key)
 	return node;
 }
 
-unordered_set<string>s;
-int x=0;
+unordered_set<string> subtrees;
 
 // This function returns empty string if tree
 // contains a duplicate subtree of size 2 or more.
 string dupSubUtil(Node *root)
 {
-	if(root==NULL) return "";
-         
-         string one= dupSubUtil(root->left); 
-         string two =dupSubUtil(root->right);
-         
-         string add= one+(root->key)+two;
-         cout<<add<<endl;
-         
-         if(s.count(add))
-         {
-              
-            x=1;
-         }else
-         {
-             s.insert(add);
-         }
-         
-         return add;
+	string s = "";
+
+	// If current node is NULL, return marker
+	if (root == NULL)
+		return s + MARKER;
+
+	// If left subtree has a duplicate subtree.
+	string lStr = dupSubUtil(root->left);
+	if (lStr.compare(s) == 0)
+	return s;
+
+	// Do same for right subtree
+	string rStr = dupSubUtil(root->right);
+	if (rStr.compare(s) == 0)
+	return s;
+
+	// Serialize current subtree
+	s = s + root->key + lStr + rStr;
+
+	cout<<s<<endl;
+
+	// If current subtree already exists in hash
+	// table. [Note that size of a serialized tree
+	// with single node is 3 as it has two marker
+	// nodes.
+	if (s.length() > 3 && subtrees.find(s) != subtrees.end()){
+		
+		 return "";
+	}
+	
+
+	subtrees.insert(s);
+
+	return s;
 }
 
 // Driver program to test above functions
 int main()
 {
+	//****
+	//https://www.geeksforgeeks.org/check-binary-tree-contains-duplicate-subtrees-size-2/
+
+	
 	Node *root = newNode('A');
 	root->left = newNode('B');
 	root->right = newNode('C');
@@ -62,9 +81,8 @@ int main()
 	root->right->right->left= newNode('D');
 
 	string str = dupSubUtil(root);
-    
-      
-	(x == 1) ? cout << " Yes ":
+
+	(str.compare("") == 0) ? cout << " Yes ":
 							cout << " No " ;
 	return 0;
 }
