@@ -48,7 +48,7 @@ bool isTreeSame(Node* one,Node* two)
 
 int main()
 {
- 
+      //* https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/
     // * First tree
     Node* root=NULL;
     root=newNode(1);

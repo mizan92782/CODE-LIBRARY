@@ -23,6 +23,7 @@ struct Node
 
 
 //**** how to find sum of tree;
+//**  top to bottom sum approach and not change node value
 
 int sum(Node* root)
 {
@@ -33,6 +34,31 @@ int sum(Node* root)
 
     return root->data+sum(root->left)+sum(root->right);
 }
+
+
+
+
+
+//*** revere order sum ,bottom to top
+// ! very very important
+int sum_tee_vvi(Node* root)
+{
+    if(root==NULL) return 0;
+    if(root->left==NULL && root->right==NULL) 
+    {
+       
+        return root->data;
+    }
+    int l=sum_tee_vvi(root->left);
+    int r=sum_tee_vvi(root->right);
+    
+    return l+r+root->data;
+}
+
+
+
+
+
 
 
 
@@ -71,7 +97,7 @@ int main()
       root->right->right=createNewNode(3);
       
       
-      
+       cout<<sum(root)<<" "<<sum_tee_vvi(root)<<endl
      
 
       cout<<isSumtree(root);
