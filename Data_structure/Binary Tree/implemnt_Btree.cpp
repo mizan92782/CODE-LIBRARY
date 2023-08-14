@@ -73,11 +73,13 @@ int main()
 {
 
      struct Node* root=NULL;
+
+     //! directly functinon a root=NULL condition 
+     // ! diye root= newNode() dile hobe na,becaue Null node kono
+     //! memory allocate kore thake na,so ata memory dokhon kore na
+     
       root= createNewNode(4);
-      root->right=createNewNode(5);
-      root->left=createNewNode(6);
-      root->right->right= createNewNode(66);
-      root->left->left=createNewNode(44);
+     
       
       insertion(root,1);
       insertion(root,11);

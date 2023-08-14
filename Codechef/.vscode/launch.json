@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/mizanur/Desktop/Code/codeforces",
-      "program": "/home/mizanur/Desktop/Code/codeforces/build/Debug/outDebug",
+      "cwd": "/home/mizanur/Desktop/Code/Codechef",
+      "program": "/home/mizanur/Desktop/Code/Codechef/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

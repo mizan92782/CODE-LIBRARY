@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -120,30 +119,10 @@ int decresebit(int n)
 int main()
 {
     fast;
-
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-
-        if (n == 1)
-        {
-            cout << 3 << "\n";
-        }
-        else if (n & 1)
-        {
-            cout << 1 << "\n";
-        }
-        else if(floor(log2(n))==ceil(log2(n)))
-        {
-            cout<<n+1<<"\n";
-        }else
-        {
-            cout << lowerbit(n) << "\n";
-        }
-    }
+       string str;
+       cin>>str;
+       cout<<str<<endl;
+   
 
     return 0;
 }
