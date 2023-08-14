@@ -11,6 +11,12 @@
   * 
   * 
   * https://www.geeksforgeeks.org/static-keyword-cpp/
+  * 
+  * 
+  * 
+  * static value assing hole,programmer jaikahnai jak,static value
+  * unchanged thaeke,even programm recursive kore
+  * picone galeo stataic value change hoi na,,,bcs its static
   
   */
 
