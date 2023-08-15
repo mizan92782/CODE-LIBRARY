@@ -33,16 +33,21 @@ using namespace std;
 #define uset unordered_set
 #define PQ priority_queue
 
+
+
 #define rep(n, i) for (i = 0; i < n; i++)
 #define itfor(i, c) for (typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)
 #define printa(a, L, R)         \
     for (int i = L; i < R; i++) \
     cout << a[i] << (i == R - 1 ? '\n' : ' ')
+
 #define printv(a) printa(a, 0, a.size())
 #define print2d(a, r, c)            \
     for (int i = 0; i < r; i++)     \
         for (int j = 0; j < c; j++) \
     cout << a[i][j] << (j == c - 1 ? '\n' : ' ')
+
+
 #define pb push_back
 #define MP make_pair
 #define SQ(x) ((x) * (x))
@@ -79,49 +84,40 @@ using namespace std;
 #define countv(v, a) count(v.begin(), v.end(), a)
 #define len(s) s.length()
 #define toint(a) atoi(a.c_str())
+
+
 #define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
-string tostr(int n)
-{
-    stringstream rr;
-    rr << n;
-    return rr.str();
-}
-ll qpow(ll n, ll k)
-{
-    ll ans = 1;
-    while (k)
-    {
-        if (k & 1)
-            ans = ans * n;
-        n = n * n;
-        k >>= 1;
-    }
-    return ans;
-}
+
 const int mod = 1e9 + 7;
 const int mxn = 1e5 + 9;
 const int eps = 1e-9;
 
-/*************************************************
-               Main function
-************************************************/
 
-int lowerbit(int n)
-{
-    return n & ~(n - 1);
-}
 
-int decresebit(int n)
-{
-    return n & (n - 1);
-}
+
+/*
+  * ****************************  Main Function ******************************************
+*/
 
 int main()
 {
     fast;
-       string str;
-       cin>>str;
-       cout<<str<<endl;
+      
+    int t;
+    cin>>t;
+    int a=0,b=0,c=0;
+    int x,y,z;
+    while (t--)
+    {
+       cin>>x>>y>>z;
+       a=a+x;
+       b=b+y;
+       c=c+z; 
+    }
+
+
+    (a==0 && b==0 && c==0) ? cout<<"YES\n" : cout<<"NO\n";
+    
    
 
     return 0;
