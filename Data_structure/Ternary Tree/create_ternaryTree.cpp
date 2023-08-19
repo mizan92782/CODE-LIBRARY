@@ -21,8 +21,20 @@ Node* newNode(int data)
      return node;
 }
 
+Node* createTernarytree(int data)
+{
 
-Node*h MakeTree(Node* root,int data)
+       Node* x= new Node;
+       x->data=data;
+       x->left=x->right=x->middle=NULL;
+
+
+     return x; 
+  
+}
+
+
+void  MakeTree(Node* root,int data)
 {
     
 
@@ -81,18 +93,91 @@ Node*h MakeTree(Node* root,int data)
 
 
 
+
+
+
+
+
+
+
+
+
+void levelOrder_stl(Node *root)
+{
+    if (root == NULL) return;
+ 
+    // Create an empty queue for
+    // level order traversal
+    queue<Node *> q;
+     
+    // to store front element of
+    // queue.
+    Node *curr;
+ 
+    // Enqueue Root and NULL node.
+    q.push(root);
+    q.push(NULL);
+ 
+    while (q.size() > 1)
+    {
+        curr = q.front();
+        q.pop();
+         
+        // condition to check
+        // occurrence of next
+        // level.
+        if (curr == NULL)
+        {
+           q.push(NULL);
+           cout << "\n";
+        }
+         
+        else {
+             
+            // pushing left child of
+            // current node.
+            if(curr->left)
+            q.push(curr->left);
+
+              if(curr->middle)
+            q.push(curr->middle);
+             
+            // pushing right child of
+            // current node.
+            if(curr->right)
+            q.push(curr->right);
+
+
+             
+            cout << curr->data << " ";
+        }
+    }
+}
+
+
+
+
+
 int main()
 {
       Node* root=NULL;
+      root=createTernarytree(1);
      
-      root=MakeTree(root,1);
-     root=MakeTree(root,2);
+  
       MakeTree(root,3);
       MakeTree(root,4);
       MakeTree(root,5);
       MakeTree(root,6);
+      MakeTree(root,23);
+      MakeTree(root,65);
+      MakeTree(root,12);
+      MakeTree(root,33);
+      MakeTree(root,6);
 
 
 
-      cout<<root->middle<<endl;
+      levelOrder_stl(root);
+
+
+
 }
