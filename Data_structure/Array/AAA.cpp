@@ -15,13 +15,12 @@ int* returnArray(int n)
 int main()
 {
 
-       vector<int>vac{4,4,6,2,2,62,5,2,3,2};
+      string str="abf";
+      for(int i=0;i<str.size();i++)
+      {
+        str[i]=str[i]+1;
+      }
 
-         vac.erase(unique(vac.begin(),vac.end()),vac.end());
-
-       for(int i=0;i<vac.size();i++)
-       {
-        cout<<vac[i]<<" ";
-       }
+      cout<<str<<endl;
     return 0;
 }
