@@ -54,6 +54,7 @@ struct Node
 
 void solve(Node* root,vector<int> v,int &ct,int k){
         if(root == NULL) return ;
+        
         v.push_back(root->data);
 
         solve(root->left,v,ct,k);
