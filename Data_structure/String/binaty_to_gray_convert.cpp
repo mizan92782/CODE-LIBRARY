@@ -81,7 +81,7 @@ int binaryConverter(int n)
 int main()
 {
 
-    //
+    //https://www.geeksforgeeks.org/gray-to-binary-and-binary-to-gray-conversion/
 	string binary = "01001";
 	cout << "Gray code of " << binary << " is "
 		<< binarytoGray(binary) << endl;
