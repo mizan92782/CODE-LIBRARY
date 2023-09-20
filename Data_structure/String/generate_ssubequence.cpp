@@ -23,6 +23,37 @@ void printSubsequence(string input, string output)
 	printSubsequence(input.substr(1), output);
 }
 
+
+// !withour changing input string
+
+void printSubsequence1(int i,string input, string output)
+{
+	// Base Case
+	// if the input is empty print the output string
+	if (i==input.size()) {
+		cout << output << endl;
+		return;
+	}
+
+	// output is passed with including
+	// the Ist character of
+	// Input string
+	printSubsequence1(i+1,input, output + input[i]);
+
+	// output is passed without
+	// including the Ist character
+	// of Input string
+	printSubsequence1(i+1,input, output);
+}
+
+
+
+
+
+
+
+
+
 // Driver code
 int main()
 {
@@ -31,7 +62,7 @@ int main()
 	string output = "";
 	string input = "abcd";
 
-	printSubsequence(input, output);
+	printSubsequence1(0,input, output);
 
 	return 0;
 }
