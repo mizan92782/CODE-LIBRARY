@@ -102,6 +102,7 @@ void BellmanFord(struct Graph* graph,int src){
 
 int main()
 {
+    //https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
      Graph* graph = createGraph(4,6);
 
      SetGraphValue(graph,0,0,1,3);
