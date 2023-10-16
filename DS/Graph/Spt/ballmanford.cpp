@@ -66,7 +66,11 @@ void BellmanFord(struct Graph* graph,int src){
              {
                  for(int j=0;j<E;j++)
                  {
-
+                      /*
+                        * dijkstraw works on vertex:its relaxation the vertex wise
+                        * ballmanford works based on edges:its relaxaton the vertex 
+                        !its relaxation all edges N(vertex) time;
+                       */
                      int s=graph->edge[j].src;
                      int d=graph->edge[j].dest;
                      int w=graph->edge[j].weight;
@@ -77,6 +81,15 @@ void BellmanFord(struct Graph* graph,int src){
                         dest[d]=dest[s]+w;
                      }
                  }
+
+
+                 cout<<"shortest path : "<<i<<"   iteration :  "<<endl;
+               
+                    for(int i=0;i<V;i++)
+                    {
+                        cout<<i<<"  ->> "<<dest[i]<<endl;
+                    }
+                
              }
 
 
