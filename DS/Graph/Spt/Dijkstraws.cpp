@@ -57,6 +57,23 @@ void Dijkstra(int graph[V][V],int src)
       {
             // * find minimum shortest path
             int u= minDistance(dist,spt);
+            
+            /*
+             by spt ,in every iterate we collecting minimum vetex,so 
+             its connot calculte twice,so src=0, not will be minimum vertex
+             all time....
+             again important note: as our first minimum vertex  src=0;
+             and we add in spt,so after that, if any vertex wight will negetive;
+             we cannot accept is shortest path.so this algo
+             not work for negetice edge as its first of minimum path is 0;
+            */
+
+
+
+             cout<<"for  minimum distantce : "<<u<<"  ---> "<<endl;
+             printSolution(dist);
+
+             cout<<endl<<endl;
              
 
              // * adding in shortest path
@@ -83,6 +100,7 @@ void Dijkstra(int graph[V][V],int src)
       }
 
 
+       cout<<"Final spt : ";
       printSolution(dist); 
 
 }
@@ -94,6 +112,10 @@ int main()
 {
 
     // https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
+
+    /*
+      ! ***printing path:  https://www.geeksforgeeks.org/printing-paths-dijkstras-shortest-path-algorithm/
+     */
     
           int graph[V][V] =
                      { 
