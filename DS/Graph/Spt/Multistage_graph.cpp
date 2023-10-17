@@ -58,6 +58,11 @@ void shortestPath(int graph[N][N]) {
 
 // Driver code
 int main() {
+
+
+    //https://www.geeksforgeeks.org/multistage-graph-shortest-path/
+    //https://www.youtube.com/watch?v=9iE9Mj4m8jk
+
     // Define the graph as an adjacency matrix
     int graph[N][N] = {
         {0, 2, 1, 3, 0, 0, 0, 0},
