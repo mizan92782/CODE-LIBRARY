@@ -32,7 +32,8 @@ class DisjointSet{
              return element;
            }
 
-           
+           //! its vvi,for sychonizing parent in union_set at find parent_x/y,
+           // *****  notice, (1,4);
           return parent[element]=find_set(parent[element]);
     }
 
