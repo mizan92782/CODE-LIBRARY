@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int jump(vector<int>& num) {
+int jump(vector<int>& num)
+ {
         
         cout<<"kk";
         int n=num.size();
@@ -44,7 +45,7 @@ int jump(vector<int>& num) {
         }
 
         return t;
-    }
+     }
 
 
 

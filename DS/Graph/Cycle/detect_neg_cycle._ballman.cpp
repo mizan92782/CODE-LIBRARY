@@ -150,6 +150,7 @@ bool isNegCycleDisconnected(Graph* graph){
               for(int j=0;j<V;j++)
               {
                   //  **if visite vertex ,its value will change 
+                
                  if(dest[j]!=INT_MAX)
                  {
                      visited[j]=true;
