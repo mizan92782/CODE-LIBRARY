@@ -69,7 +69,7 @@ class DisjointSet{
                 // make union opreration by making same parent
                 parent[parent_x] = parent_y;
 
-                // ! ***its path comparison
+                // ! ***its path comparision
                  parent[x]=parent_y;
 
                 // rank size update
