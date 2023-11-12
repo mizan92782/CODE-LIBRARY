@@ -85,7 +85,7 @@ void Find_Minimum_Cost(vector<vector<int>>city,int n)
                    parent[v]=u;
                    keycity[v]= city[u][v];
 
-                    cout<<"city  "<<u<<"  connected to "<<v<<"  :  cost--> "<<city[u][v]<<endl;
+                    cout<<"city  "<<u<<"connected to "<<v<<"  :  --> "<<city[u][v]<<endl;
              }
           }
 
