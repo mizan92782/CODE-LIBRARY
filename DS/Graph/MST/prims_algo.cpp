@@ -90,7 +90,7 @@ void PrimeMst(int graph[V][V])
                       key[v]=graph[u][v];
                       parent[v]=u;
 
-                      cout<<"key : "<<v<<" --> "<<graph[u][v]<<endl;
+                      cout<<"node : "<<u<<"  connected to "<<v<<"    cost--> "<<graph[u][v]<<endl;
                   }
              }
 
