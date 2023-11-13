@@ -6,6 +6,28 @@ using namespace std;
 typedef vector<vector<int>> Matrix;
 
 int determinant(const Matrix& mat, int n) {
+
+
+     cout<<"i : value  is :   "<<endl;
+
+        for (int x = 0; x < mat.size(); ++x) {
+           
+            for (int y = 0; y< mat[x].size(); ++y) {
+              
+                    cout<<mat[x][y]<<",";
+                  
+
+              
+            }
+
+            cout<<endl;
+           
+        }
+
+        cout<<endl;
+
+
+
     if (n == 1) {
         return mat[0][0];
     }
@@ -16,6 +38,10 @@ int determinant(const Matrix& mat, int n) {
     for (int i = 0; i < n; ++i) {
         // Get the cofactor matrix
         Matrix submat(n - 1, vector<int>(n - 1, 0));
+
+       
+    
+
         for (int j = 1; j < n; ++j) {
             int col = 0;
             for (int k = 0; k < n; ++k) {
@@ -23,12 +49,24 @@ int determinant(const Matrix& mat, int n) {
                     submat[j - 1][col] = mat[j][k];
                     col++;
                 }
+
+              
             }
+           
         }
+
+
+      
+          
+                cout<<i<<"  -- non final determinat :  "<<det<<endl<<endl;
+
 
         // Recursive call for the cofactor expansion
         det += sign * mat[0][i] * determinant(submat, n - 1);
         sign = -sign;
+
+
+        cout<<i<<"  -- finala determinat :  "<<det<<endl<<endl;
     }
 
     return det;
