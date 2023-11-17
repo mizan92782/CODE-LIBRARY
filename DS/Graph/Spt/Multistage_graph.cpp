@@ -19,7 +19,7 @@ void shortestPath(int graph[N][N]) {
     // The cost to reach the last stage is 0
     cost[N - 1] = 0;
 
-    // Traverse the graph in reverse order
+    //  ! Traverse the graph in reverse order
     for (int i = N - 2; i >= 0; i--) {
         for (int j = i+1; j < N; j++) {
             if (graph[i][j]) {
