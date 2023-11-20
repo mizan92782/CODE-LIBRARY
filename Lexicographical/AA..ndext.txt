@@ -1,0 +1,3 @@
+1. built-in-function.cpp
+2.lexico.. 1 to N
+3. lexico.. of length N character
