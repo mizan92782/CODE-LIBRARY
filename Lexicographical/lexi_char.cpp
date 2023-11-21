@@ -4,13 +4,14 @@ using namespace std;
 
 void DFS(string str,int length)
 {
-     if(str.size()>length)
+     if(str.size()==length)
      {
+         cout<<str<<" ";
         return ;
      }
 
 
-     cout<<str<<" ";
+    
 
      for(int i=0;i<length;i++)
      {
@@ -56,5 +57,5 @@ int main()
 {
      int length=5;
 
-    Lexi_char(3);
+    Lexi_char(4);
 }
