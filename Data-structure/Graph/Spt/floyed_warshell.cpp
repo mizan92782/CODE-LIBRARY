@@ -16,18 +16,28 @@ void floyedwarsheell(int graph[][V])
       */
 
 
+       //for via node;
      for(k=0;k<V;k++)
      {
+        // for source node in every via
+
          for(i=0;i<V;i++)
          {
              for(j=0;j<V;j++)
              {
+                  // for  destinatio  node ,for every seuce to all node
                   if((graph[i][j]> (graph[i][k]+graph[k][j])) && (graph[i][k]!= INF   &&  graph[k][j]!=INF))
                   {
+                    // find a spt short than current spt via K node;
                      graph[i][j]=graph[i][k]+graph[k][j];
                   }
              }
          }
+
+
+          cout<<"In D: "<<k<<endl;
+          printSolution(graph);
+          cout<<endl<<endl;
      }
 
 
