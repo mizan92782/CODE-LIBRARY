@@ -157,6 +157,16 @@ int main()
     /*
       ! ***printing path:  https://www.geeksforgeeks.org/printing-paths-dijkstras-shortest-path-algorithm/
      */
+
+
+
+     /*
+        *Why dijkstraws fail for negetive edges?
+        The problem with negative weights arises from the fact that Dijkstra’s algorithm assumes 
+        that once a node is added to the set of visited nodes, its distance is finalized and will 
+        not change. However, in the presence of negative weights, this assumption can lead to incorrect 
+        results.
+     */
     
           int graph[V][V] =
                      { 
