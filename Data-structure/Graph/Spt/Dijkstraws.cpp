@@ -53,6 +53,13 @@ void Dijkstra(int graph[V][V],int src)
       // * make src spt minimum
       dist[src]=0;
 
+      
+       /*
+          ! some time,here accure a confusing that from which node we consider this loop
+          ! from 0 node we consider spt,and in last node havent sny unspt node 
+          ! so,last node not conside ,so use V-1
+       */
+
       for(int i=0;i<V-1;i++)
       {
             // * find minimum shortest path

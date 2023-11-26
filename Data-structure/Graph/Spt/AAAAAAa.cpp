@@ -1,82 +1,110 @@
+
 #include<bits/stdc++.h>
 using namespace  std;
-
-#define V 4
-#define INF 99999
- 
+#define V 9
 
 
 
 
-
-
-void printSolution(int dist[][V])
+int minimumdist(int dist[V],bool spt[V])
 {
-    cout << "The following matrix shows the shortest "
-            "distances"
-            " between every pair of vertices \n";
-    for (int i = 0; i < V; i++) {
-        for (int j = 0; j < V; j++) {
-            if (dist[i][j] == INF)
-                cout << "INF"
-                     << " ";
-            else
-                cout << dist[i][j] << "   ";
-        }
-        cout << endl;
+      int index;
+
+      int mini=INT_MAX;
+
+      for(int i=0;i<V;i++)
+      {
+
+            if(dist[i]<mini && spt[i]==false)
+            {
+                mini=dist[i];
+                index=i;
+                
+            }
+      }
+
+
+      return index;
+}
+
+
+
+
+
+
+void printSolution(int dist[])
+{
+    cout << "Vertex \t Distance from Source" << endl;
+    for (int i = 0; i < V; i++)
+        cout << i << " \t\t\t\t" << dist[i] << endl;
+}
+
+
+
+
+
+
+
+void dijkstraws(int graph[V][V])
+{
+
+    bool spt[V];
+    int dist[V];
+    int parent[V];
+
+    
+
+    for(int i=0;i<V;i++)
+    {
+         spt[i]=false;
+         dist[i]= INT_MAX;
+         parent[i]=-1;
     }
-}
 
 
 
 
+    
+    dist[0]=0;
 
-void floyedwarsheell(int graph[V][V])
-{
+    for(int i=0;i<V-1;i++)
+    {
+        int u=minimumdist(dist,spt);
+
+        spt[u]=true;
+
+        
+        
+            
+        
+        for(int v=0;v<V;v++)
+        {
+             if(graph[u][v] !=0 && spt[v]==false  && dist[u]+graph[u][v]<dist[v])
+                 {
+                    dist[v]=dist[u]+graph[u][v];
+
+                    parent[v]=u;
+                 }
+        }
+    }
 
 
-     /*
-     [i][j]  = [i][k] + [k][j];
-      i-->j    i-->k   k-->j
-
-      sorce =i;
-      destination = j;
-      via node is : k;
-      */
-     
 
 
+     cout<<endl<<endl;
 
+     cotu<<"parent  is : :  ";
 
-     //for via node;
-
-     for(int k=0;k<V;k++)
+     for(int i=0;i<V;i++)
      {
-         
-          // for source node in every via
-
-          for(int i=0;i<V;i++)
-          {
-
-              // for  destinatio  node ,for every seuce to all node
-              for(int  j=0;j<V;j++)
-              {
-                   
-                   if(graph[i][j]> (graph[i][k]+graph[k][j]))
-                   {
-                                  graph[i][j]=graph[i][k]+graph[k][j];     
-                   }
-              }
-          }
-
-
-          cout<<"In D: "<<k<<endl;
-          printSolution(graph);
-
-         
-          cout<<endl<<endl;
+         cout<<i<<"   "<<parent[i]
      }
+
+
+    printSolution(dist);
 }
+
+
 
 
 
@@ -88,14 +116,19 @@ int main()
 {
 
 
-    int graph[V][V] = { { 0, 5, INF, 10 },
-                        { INF, 0, 3, INF },
-                        { INF, INF, 0, 1 },
-                        { INF, INF, INF, 0 } };
+    int graph[V][V] =
+                     { 
+                        { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
+                        { 4, 0, 8, 0, 0, 0, 0, 11,0 },
+                        { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
+                        { 0, 0, 7, 0, 9, 14, 0, 0,0 },
+                        { 0, 0, 0, 9, 0, 10, 0, 0,0 },
+                        { 0, 0, 4, 14, 10, 0, 2,0,0 },
+                        { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
+                        { 8, 11, 0, 0, 0, 0, 1, 0,7 },
+                        { 0, 0, 2, 0, 0, 0, 6, 7, 0 } 
+                    }; 
 
 
-
- floyedwarsheell(graph);
-
-
+                    dijkstraws(graph);
 }
