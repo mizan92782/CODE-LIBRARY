@@ -59,7 +59,18 @@ void preOrder(Node* root)
 
 
 
-//print given level
+//! ***************print level ******
+
+
+int Height(Node* root)
+{
+     if(root==NULL ) return 0;
+
+    return max(Height(root->right),Height(root->left))+1;
+}
+
+
+
 void printGivenLevel(struct Node* root,
                      int level)
 {
@@ -76,7 +87,18 @@ void printGivenLevel(struct Node* root,
 }
   
 
+void printLevelwise(Node* root)
+{
+     int h=Height(root);
+     for(int i=1;i<=h;i++)
+     {
+         printGivenLevel(root,i);
+         cout<<endl;
+     }
+}
 
+
+ //! ********** leaf- non leaf ************
 void printLeafNode(Node* root)
 {
      if(root->right==NULL && root->left==NULL)
@@ -137,6 +159,7 @@ void RightView_bst(Node* root)
 
 
 
+// ! ************************ Deletion**************************
 
 Node* deletion(Node* root,int data)
 {
@@ -316,12 +339,107 @@ struct Node* deleteNode(struct Node* root, int key)
 
 
 
+ //! **************** Searching element ************
+
+//* Search is this node exits
+Node* Search(Node* root,int key)
+{
+     /*
+       if return null : Node not exist
+       if return not null : node exist;
+    */
+     if(root==NULL || root->data==key)
+     {
+        return root;
+     }
+
+
+     if(key<root->data)
+     {
+         return Search(root->left,key);
+     }
+
+
+
+     return  Search(root->right,key);
+
+}
+
+
+
+
+ Node* SearchIteratively(Node* root,int key)
+ {
+     
+
+      while (root!=NULL)
+      {
+         if(root==nullptr || root->data==key) return root;
+
+         if(key>root->data)
+         {
+            root=root->right;
+         }else{
+             root=root->left;
+         }
+      }
+     
+
+    return root;
+ }
+
+
+
+
+  Node* minValueNode(Node* current)
+  {
+           
+           while (current->left!=nullptr)
+           {
+                  current=current->left;
+           }
+
+    return current;         
+
+  }
+
+
+
+
+  //! ***************** * Is tree is Bst *********************************
+  bool util(Node* root, int minValue, int maxValue) {
+    if (root == NULL) {
+        return true;
+    }
+
+    // Check if the current node's value is within the valid range
+    if (root->data <= minValue || root->data >= maxValue) {
+        return false;
+    }
+
+    // Check the left and right subtrees recursively with updated min and max values
+    bool left = util(root->left, minValue, root->data);
+    bool right = util(root->right, root->data, maxValue);
+
+    // Return true only if both subtrees are valid BSTs
+    return left && right;
+}
+
+bool isBST(Node* root) {
+    //https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+    // Call the util function with initial min and max values
+    return util(root, INT_MIN, INT_MAX);
+}
+
+
+
 int main()
 {
 
 
 
-     //https://www.geeksforgeeks.org/introduction-to-binary-search-tree-data-structure-and-algorithm-tutorials/
+
+
      struct Node* root=NULL;
 
     root = insertion(root, 50);
@@ -338,6 +456,9 @@ int main()
         root=deletion(root,50);
       cout<<endl;
       preOrder(root);
+      cout<<endl;
+
+      cout<<SearchIteratively(root,10)->data;
       
       
       /*
