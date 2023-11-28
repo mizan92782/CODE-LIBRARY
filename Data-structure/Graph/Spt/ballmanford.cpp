@@ -62,8 +62,17 @@ void BellmanFord(struct Graph* graph,int src){
              dest[src]=0;
 
 
+
+
+              // Step 2: Relax all edges |V| - 1 times.as V vertex of spt can hav only V-1 edge
+             // in every iterate we will one spt path such in V-1 time we ger V-2=E spt path
+             
              for(int i=1;i<=V-1;i++)
              {
+                  // for every node relaxition relax all edges
+                  
+
+                 // edges are ...
                  for(int j=0;j<E;j++)
                  {
                       /*
@@ -81,6 +90,8 @@ void BellmanFord(struct Graph* graph,int src){
                         dest[d]=dest[s]+w;
                      }
                  }
+
+
 
 
                  cout<<"shortest path : "<<i<<"   iteration :  "<<endl;
