@@ -114,28 +114,27 @@ void printNonLeafNode(Node* root)
 
 
 
-void leftview_bst(Node* root,int rootcount=1)
+void RightView_bst(Node* root)
 {
-     if(root==NULL)
-     {
-        return ;
-     }
+    if(root==nullptr)
+    {
+        return;
+    }
 
-     if(root!=NULL && rootcount==1)
-     {
-        cout<<root->data<<" ";
-        rootcount++;
-     }
+    if(root->right==NULL && root->left==nullptr)
+    {
+         cout<<root->data<<" ";
+         return;
+    }else if(root->right!=NULL )
+    {
+         cout<<root->data<<" ";
+         RightView_bst(root->right);
+         if(root->left) RightView_bst(root->left);
+    }
 
-     if(root->left)
-     {
-        cout<<root->left->data<<" ";
-     }
-
-
-     leftview_bst(root->left,rootcount);
-     leftview_bst(root->right,rootcount);
 }
+
+
 
 
 
@@ -320,6 +319,9 @@ struct Node* deleteNode(struct Node* root, int key)
 int main()
 {
 
+
+
+     //https://www.geeksforgeeks.org/introduction-to-binary-search-tree-data-structure-and-algorithm-tutorials/
      struct Node* root=NULL;
 
     root = insertion(root, 50);

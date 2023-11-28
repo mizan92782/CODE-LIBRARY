@@ -23,9 +23,11 @@ void floyedwarsheell(int graph[][V])
 
          for(i=0;i<V;i++)
          {
+             //fot  destination
              for(j=0;j<V;j++)
              {
                   // for  destinatio  node ,for every seuce to all node
+                  
                   if((graph[i][j]> (graph[i][k]+graph[k][j])) && (graph[i][k]!= INF   &&  graph[k][j]!=INF))
                   {
                     // find a spt short than current spt via K node;
