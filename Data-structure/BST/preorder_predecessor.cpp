@@ -40,7 +40,8 @@ int main() {
     root->left->left = new TreeNode(3);
     root->left->right = new TreeNode(7);
     root->right->left = new TreeNode(12);
-    root->right->right = new TreeNode(18);
+    root->right->right = new 
+    TreeNode(18);
 
     int key = 7;
 
