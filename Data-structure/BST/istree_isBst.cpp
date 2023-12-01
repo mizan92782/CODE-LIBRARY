@@ -407,6 +407,8 @@ Node* Search(Node* root,int key)
 
 
   //! ***************** * Is tree is Bst *********************************
+
+  
   bool util(Node* root, int minValue, int maxValue) {
     if (root == NULL) {
         return true;
