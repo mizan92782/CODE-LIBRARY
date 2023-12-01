@@ -31,10 +31,10 @@ Node* insertion(Node* root,int data)
 
    
     
-    if(root->data> data)
+    if(root->data>data)
     {
          root->left=insertion(root->left,data);
-    }else{
+    }else if(root->data < data){
         root->right=insertion(root->right,data);
     }
 
@@ -405,6 +405,34 @@ Node* Search(Node* root,int key)
 
 
 
+// ! **************************** traverse sorting order  bst valuee   *********** 
+
+
+// ** inorder traverse  a bst in asceding order 
+void inorderTraversal(Node* root)
+{
+     if(root==nullptr ) return ;
+     inorderTraversal(root->left);
+     cout<<root->data<<" ";
+     inorderTraversal(root->right);
+
+     // 
+}
+
+
+
+
+void ReverseInorderTraversal(Node* root)
+{
+     if(root==nullptr ) return ;
+     ReverseInorderTraversal(root->right);
+     cout<<root->data<<" ";
+     ReverseInorderTraversal(root->left);
+
+     // 
+}
+
+
 int main()
 {
 
@@ -414,8 +442,12 @@ int main()
      struct Node* root=NULL;
 
     root = insertion(root, 50);
-    insertion(root, 30);
+    insertion(root, 60);
     insertion(root, 20);
+    insertion(root, 80);
+    insertion(root, 30);
+    insertion(root, 30);
+    insertion(root, 70);
     insertion(root, 10);
    
     ;
@@ -447,6 +479,10 @@ int main()
 
     */
      
+     cout<<endl;
+     inorderTraversal(root);
+     cout<<endl;
+     ReverseInorderTraversal(root);
 
 
 }
