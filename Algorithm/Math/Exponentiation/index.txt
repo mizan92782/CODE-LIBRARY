@@ -1,0 +1,13 @@
+
+// bianry exponentiation is a important sumbject for competitive programming****
+all topic shoulb be understand clearly
+
+
+
+
+
+
+//!**** https://www.geeksforgeeks.org/binary-exponentiation-for-competitive-programming/
+
+
+https://cp-algorithms.com/algebra/binary-exp.html
