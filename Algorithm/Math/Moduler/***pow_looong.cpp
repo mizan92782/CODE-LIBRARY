@@ -3,6 +3,8 @@ using namespace std;
 typedef long long int lli;
 
 
+
+//binary expinentiation
 lli power(lli x,lli n,lli mod)
 {
         // x^0=1;
