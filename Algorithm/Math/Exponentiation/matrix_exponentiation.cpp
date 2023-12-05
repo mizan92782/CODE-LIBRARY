@@ -6,7 +6,7 @@ using namespace std;
 // Define a matrix type for convenience
 typedef vector<vector<long long>> Matrix;
 
-// Function to multiply two matrices
+// ! must be learn : Function to multiply two matrices
 Matrix multiply(const Matrix& A, const Matrix& B) {
     int rows_A = A.size();
     int cols_A = A[0].size();
