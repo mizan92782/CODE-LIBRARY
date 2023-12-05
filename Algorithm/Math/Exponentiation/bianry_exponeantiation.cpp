@@ -33,11 +33,16 @@ ll binaryExponentiation(ll base, ll exponent) {
         // If the current exponent is odd, multiply result with base
         if (exponent % 2 == 1) {
             result *= base;
-        }
+            exponent=exponent-1;
+        }else{
 
-        // Square the base and divide the exponent by 2
+             // Square the base and divide the exponent by 2
         base *= base;
         exponent /= 2;
+
+        }
+
+       
     }
 
     return result;
