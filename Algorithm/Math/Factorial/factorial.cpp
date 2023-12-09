@@ -50,7 +50,7 @@ int multipication(int x,int res[],int res_size);
       // intially result
       res[0]=1;
 
-      // for stroinf index where reach our value in res
+      // for stor if index where reach our value in res
       int res_size=1;
 
       for(int i=2;i<=n;i++)
