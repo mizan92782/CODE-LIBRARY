@@ -1,0 +1,18 @@
+
+### Basic information :
+-----------------------------------------
+
+  1. first element is either smallest or greatest
+  2.incresting or non incresing order
+  3. By defalut its top element is greatest or element are decresign order ,as 
+      priority queue is built on Max-heap structure
+
+  4.
+
+
+
+### Link
+__________________________
+_________________________________________
+
+https://www.geeksforgeeks.org/priority-queue-in-cpp-stl/
