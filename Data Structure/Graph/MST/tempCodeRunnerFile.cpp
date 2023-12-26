@@ -1,1 +1,1 @@
-CountSpanningTree(adjacent_matrix);
+ cout<<"\n--------------------------------------------"<<endl;
