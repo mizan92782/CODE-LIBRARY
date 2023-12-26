@@ -13,11 +13,26 @@ using namespace std;
  
 // Dimension of input square matrix
 #define N 4
+
+
+// Function for displaying the matrix 
+void display(int mat[N][N], 
+             int row, int col)
+{
+    for (int i = 0; i < row; i++) 
+    {
+        for (int j = 0; j < col; j++)
+            cout << "  " <<  mat[i][j];
+        cout << "\n";
+    }
+}
+
+
  
 // Function to get cofactor of 
 // mat[p][q] in temp[][]. n is
 // current dimension of mat[][]
-void getCofactor(int mat[N][N], 
+void getSubmatrix(int mat[N][N], 
                  int temp[N][N], int p,
                  int q, int n)
 {
@@ -53,6 +68,9 @@ void getCofactor(int mat[N][N],
    n is current dimension of mat[][]. */
 int determinantOfMatrix(int mat[N][N], int n)
 {
+
+     display(mat,n,n);
+     cout<<endl;
     // Initialize result
     int D = 0; 
  
@@ -71,11 +89,15 @@ int determinantOfMatrix(int mat[N][N], int n)
     // first row
     for (int f = 0; f < n; f++) 
     {
+         cout<<"\n--------------------------------------------"<<endl;
         // Getting Cofactor of mat[0][f]
-        getCofactor(mat, temp, 0, f, n);
+        //! her use f as colum,bcs always first row=0,and colum will remove ,clm 0 to n-1
+        getSubmatrix(mat, temp, 0, f, n);
+        //curent mat[x][y] is co-factor
         D += sign * mat[0][f] * 
              determinantOfMatrix(temp, n - 1);
- 
+
+            
         // terms are to be added with alternate sign
         sign = -sign;
     }
@@ -83,17 +105,7 @@ int determinantOfMatrix(int mat[N][N], int n)
     return D;
 }
  
-// Function for displaying the matrix 
-void display(int mat[N][N], 
-             int row, int col)
-{
-    for (int i = 0; i < row; i++) 
-    {
-        for (int j = 0; j < col; j++)
-            cout << "  " <<  mat[i][j];
-        cout << "n";
-    }
-}
+
  
 
 int main()
@@ -116,4 +128,10 @@ int main()
     // Function call
     cout << "Determinant of the matrix is : " << 
              determinantOfMatrix(mat, N);
+
+
+             string str="11103";
+
+             cout<<str[0]-48;
+             
 }
