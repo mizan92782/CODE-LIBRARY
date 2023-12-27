@@ -89,7 +89,7 @@ Node* deleteNodesOnRightSide(Node* head)
 
      // * recusively goint to last node
     // ! this approach is very important********************
-    //! how to last of list and select specific node
+    //! how to reach of list and select specific node
 
     
       Node* nextNode=deleteNodesOnRightSide(head->next);
