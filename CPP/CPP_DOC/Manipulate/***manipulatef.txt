@@ -1,0 +1,5 @@
+//<iomap> : https://cplusplus.com/reference/iomanip/
+//<ios> : https://cplusplus.com/reference/ios/
+//gfg : https://www.geeksforgeeks.org/manipulators-in-c-with-examples/
+
+this topi is very important

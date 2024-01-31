@@ -4,6 +4,7 @@
 3. for(size_t i=0;i<sizeof(one);i++)
    {
       cout<<one.test(i)<<endl;
+      
    }
 
 
