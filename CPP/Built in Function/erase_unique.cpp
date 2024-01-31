@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     // Initializing vector with array values
-    int arr[] = { 5, 10, 15, 20, 20, 23, 42, 45 };
+    int arr[] = {22,15, 5,5, 10, 15, 20, 20, 23, 42, 22,45 };
     int n = sizeof(arr) / sizeof(arr[0]);
     vector<int> vect(arr, arr + n);
  
@@ -44,7 +44,7 @@ int main()
     cout<<endl<<endl;
 
 
- 
+   sort(vect.begin(),vect.end());
     vect.erase(unique(vect.begin(), vect.end()),
                vect.end());
     cout << "\nVector after removing duplicates:\n";

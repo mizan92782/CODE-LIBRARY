@@ -23,6 +23,8 @@ void printsubarray(int arr[],int n,int start,int end)
      }
 }
 
+
+
  //serial maintain kore
  void printsubarray2(int arr[],int n)
  {
