@@ -24,7 +24,7 @@ void printSubsequence(string input, string output)
 }
 
 
-// !withour changing input string
+// !without changing input string
 
 void printSubsequence1(int i,string input, string output)
 {
@@ -62,7 +62,7 @@ int main()
 	string output = "";
 	string input = "abcd";
 
-	printSubsequence1(0,input, output);
+	printSubsequence(input, output);
 
 	return 0;
 }
