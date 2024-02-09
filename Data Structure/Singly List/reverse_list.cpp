@@ -96,8 +96,27 @@ Node* reverseList1(Node* head)
 
 
 
+ Node* Rev(Node* head)
+{
+    if(head == NULL || head->next == NULL) 
+        return head;
 
+    Node* temp = head;
+    Node* prev = NULL;
+    Node* next = NULL;
 
+    while(temp != NULL)
+    {
+        next = temp->next;
+        temp->next = prev;
+        prev = temp;
+        temp = next;
+    }
+
+    return prev;
+}
+
+    
 
 int main()
 {
@@ -119,7 +138,7 @@ int main()
 
 
        //!if return pointer  
-       head=reverseList1(head);
+       head=Rev(head);
        printlist(head);
 
 
