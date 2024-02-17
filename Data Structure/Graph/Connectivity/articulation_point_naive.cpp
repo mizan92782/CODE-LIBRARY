@@ -41,6 +41,8 @@ bool ChecktAC_node(vector<vector<int>>& graph,int v,int s)
      int component=0;
      vector<int>visited(v,false);
 
+
+     //ignore source node
      visited[s]=true;
 
      for(int i=0;i<v;i++)
@@ -116,18 +118,25 @@ void GraphAC(vector<vector<int>>& graph,int v)
 
 
 
+
+
+
+
+
  int main(int argc, const char** argv) {
 
         
-        int v=7;
+        int v=8;
         vector<vector<int>>graph(v,vector<int>());
 
-        addedge(graph,0,2);
+        addedge(graph,0,1);
         addedge(graph,1,2);
-        addedge(graph,3,2);
-        addedge(graph,4,2);
+        addedge(graph,2,3);
+        addedge(graph,0,3);
+        addedge(graph,0,4);
         addedge(graph,4,5);
-        addedge(graph,5,6);
+        addedge(graph,4,6);
+        addedge(graph,6,7);
 
 
         cout<< ChecktAC_node(graph,v,0)<<endl;
