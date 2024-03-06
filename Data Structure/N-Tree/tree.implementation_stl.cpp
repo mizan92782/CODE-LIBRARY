@@ -134,7 +134,7 @@ void Traverse_tree(vector<vector<int>>& chield)
 int main()
 {
     int N = 7;
-    // for storing chield
+    // for storing child
     vector<vector<int>> chield(N + 1, vector<int>());
     // for stroring tree
     int arr[N + 1];
