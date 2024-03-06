@@ -115,11 +115,7 @@ void dfsAP(int u,int parent,int time)
         
         addedge(graph,0,1);
         addedge(graph,0,2);
-        addedge(graph,0,3);
-        addedge(graph,1,2);
-        addedge(graph,1,3);
-        addedge(graph,2,3);
-        
+       
        
        
       

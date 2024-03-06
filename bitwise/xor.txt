@@ -1,0 +1,10 @@
+
+
+** give , [5,2}
+find x^5=2;
+
+x ^y= z
+=> (x^y)^y =z^y 
+=> x^(y^y)=z^y (associative)
+=> x^0=z^y
+=> x=z^y
