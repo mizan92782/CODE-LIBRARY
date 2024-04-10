@@ -1,0 +1,13 @@
+           
+           
+            // relation have u---v
+            int v = graph[u].back();
+          
+             //break from u side;
+            graph[u].pop_back();
+            
+            //break from v side;
+            graph[v].erase(find(graph[v].begin(), graph[v].end(), u));
+            
+            
+            // now u and  v have=nt  edge

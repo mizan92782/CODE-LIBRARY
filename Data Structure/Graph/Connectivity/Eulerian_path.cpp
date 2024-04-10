@@ -92,24 +92,102 @@ int CountOddDegere()
 
 
 //! Check Eulerian
-string CheckEulerian()
+void PrintEulerianPath()
 {
      int odd_degree=CountOddDegere();
      cout<<odd_degree<<endl;
 
-     //** discconnect + odd_degree > 2;
+     //! 1. Check is it Eulerian
+     // ** discconnect + odd_degree > 2;
      if(isConnectedGraph()==false || odd_degree>2) 
      {
-        return "This is not Eulerian path";
+         cout<< "This is not Eulerian path or circle\n";
+         return ;
      }
 
-     if(odd_degree==0)
+
+
+
+     // ! 2.find the starting node for eulerian path or cycle
+     int startnode=0;
+     /*
+       if its is cycle,any node can be startingnode
+       if its path odd node can be starging node
+     */
+
+
+     for(int i=0;i<V;i++)
      {
-        return "this is Eulerian cycle";
+        if(graph[i].size()%2==1)
+        {
+            startnode=i;
+            break;
+        }
      }
 
-     // if degree==2
-     return  "this is semi Eulerian of  of path";
+
+
+    stack<int>stk;
+    vector<int>path;
+
+    stk.push(startnode);
+
+    
+    /*
+      0 --- 1-----2
+      |           |
+      ------------
+    
+    */
+
+    while (!stk.empty())
+    {
+        int u=stk.top();
+
+        if(!graph[u].empty())
+        {
+            int v=graph[u].back();
+            stk.push(v);
+
+            //! break edge among u-v
+            
+            graph[u].pop_back();
+            graph[v].erase(find(graph[v].begin(),graph[v].end(),u));
+        }else{
+
+             //! ther is no edge :just bractrack
+             stk.pop();
+             
+             path.push_back(u);
+        }
+    }
+
+
+
+    
+
+
+    if(odd_degree==0)
+    {
+        cout<<"Eulerian cycle :  \n ";
+    }else{
+        
+        cout<<"Eulerian path : \n";
+    }
+
+
+    //! **** print path
+    for (int i = 0; i < path.size(); ++i) {
+        cout << path[i];
+
+        
+        if (i != path.size() - 1) {
+            cout << " -> ";
+        }
+    }
+    cout << endl;
+    
+    
 
 }
 
@@ -134,11 +212,12 @@ int main()
 
      graph.push_back({1,2});
      graph.push_back({0,2});
-     graph.push_back({1,0});
+     graph.push_back({0,1});
 
-     string str=CheckEulerian();
-     cout<<str<<endl;
 
+     PrintEulerianPath();
+
+     
 
 
 
