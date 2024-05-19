@@ -58,7 +58,8 @@ int main()
 
    
    //* make bitmasking and pring number;
-
+  //mking decimal nmber from set
+  
    vector<int>vec={2,3,5};
     //10110=22
    bitmasking(vec);
@@ -67,6 +68,24 @@ int main()
    vec={4,7,2};
    //1001010=74
    bitmasking(vec);
+
+
+   cout<<endl<<endl;
+   cout<<"print all subset from 1 to 10 number : "<<endl<<endl<<endl;
+
+   //making 10 bits number
+   int x=1;
+   for(int i=1;i<=10;i++)
+   {
+    x=x<<1;
+    
+   }
+
+   //print all subset for 10
+   for(int i=1;i<x;i++)
+   {
+    subsetPrint(i);
+   }
 
 
 
