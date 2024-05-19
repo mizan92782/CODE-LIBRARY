@@ -130,8 +130,7 @@ int main()
              determinantOfMatrix(mat, N);
 
 
-            cout<<endl;
-             string s=;
+          
              
 
            
