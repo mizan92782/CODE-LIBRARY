@@ -56,7 +56,7 @@ void Dijkstra(int graph[V][V],int src)
       
        /*
           ! some time,here accure a confusing that from which node we consider this loop
-          ! from 0 node we consider spt,and in last node havent sny unspt node 
+          ! from 0 node we consider spt,and in last node havent any unspt node 
           ! so,last node not conside ,so use V-1
        */
 
