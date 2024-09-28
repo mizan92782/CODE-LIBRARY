@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,7 +22,7 @@ void printMst(int parent[V],int graph[V][V])
 
 
 
-int minKey(int key[V],int mstSet[V])
+int minKey(int key[V],bool mstSet[V])
 {
      int mini=INT_MAX;
      int index;
@@ -47,7 +48,7 @@ void PrimeMst(int graph[V][V])
         int parent[V];
 
         // *store mst
-        int mstSet[V];
+        bool mstSet[V];
 
         // **store key,which give lowest weight edge in cut
         // * key node use for store adjacet node of mstset node;
@@ -84,10 +85,18 @@ void PrimeMst(int graph[V][V])
 
 
              for(int v=0;v<V;v++)
-             {
+             {    
+                 //u--v : means (u) minimum to other
                   if(graph[u][v] && mstSet[v]==false && graph[u][v]<key[v])
                   {
+
+                     //! track adjacent of minimum node which add in mst
+                     //! for next step minimum search among them
+
+                     //by this line ,we will find lowest edge in not include mst
                       key[v]=graph[u][v];
+
+                      //also track parent
                       parent[v]=u;
 
                       cout<<"node : "<<u<<"  connected to "<<v<<"    cost--> "<<graph[u][v]<<endl;

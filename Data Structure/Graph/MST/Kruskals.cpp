@@ -131,6 +131,8 @@ class Graph{
          for (auto edge : edgelist) { 
             int w = edge[0]; 
             int x = edge[1]; 
+           
+
             int y = edge[2];
 
 
