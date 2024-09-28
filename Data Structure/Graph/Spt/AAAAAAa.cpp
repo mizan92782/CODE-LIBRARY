@@ -4,111 +4,72 @@ using namespace  std;
 #define V 9
 
 
-
-
-int minimumdist(int dist[V],bool spt[V])
+int minimum_node(vector<bool>& visited,vector<int>& spt)
 {
-      int index;
+         int index=-1;
+         int maxV=INT_MAX;
 
-      int mini=INT_MAX;
 
-      for(int i=0;i<V;i++)
-      {
+         for(int i=0;i<V;i++)
+         {
+              if(visited[i]==false && spt[i]<maxV)
+              {
+               maxV=spt[i];
+               index=i;
+              }
+         }
 
-            if(dist[i]<mini && spt[i]==false)
-            {
-                mini=dist[i];
-                index=i;
-                
+
+         return index;
+}
+
+
+
+
+
+void dijkstraw(int graph[V][V],int src)
+{
+
+       
+       vector<int>spt(V,INT_MAX);
+       vector<bool>visited(V,false);
+
+
+       //add source
+       spt[src]=0;
+       
+
+
+
+      
+       for(int i=0;i<V-1;i++)
+       {
+
+            int u=minimum_node(visited,spt);
+            //maske cuurent minimum node visited
+            visited[u]=true;
+
+        
+
+
+            for(int v=0;v<V;v++)
+             {
+                   if(visited[v]==false && graph[u][v]!=0 &&  spt[v]>spt[u]+graph[u][v] )
+                   {
+                         spt[v]=spt[u]+graph[u][v];
+                   }
             }
-      }
-
-
-      return index;
-}
+       }
 
 
 
 
-
-
-void printSolution(int dist[])
-{
-    cout << "Vertex \t Distance from Source" << endl;
+       cout << "Vertex \t Distance from Source" << endl;
     for (int i = 0; i < V; i++)
-        cout << i << " \t\t\t\t" << dist[i] << endl;
+        cout << i << " \t\t\t\t" << spt[i] << endl;
+
+
 }
-
-
-
-
-
-
-
-void dijkstraws(int graph[V][V])
-{
-
-    bool spt[V];
-    int dist[V];
-    int parent[V];
-
-    
-
-    for(int i=0;i<V;i++)
-    {
-         spt[i]=false;
-         dist[i]= INT_MAX;
-         parent[i]=-1;
-    }
-
-
-
-
-    
-    dist[0]=0;
-
-    for(int i=0;i<V-1;i++)
-    {
-        int u=minimumdist(dist,spt);
-
-        spt[u]=true;
-
-        
-        
-            
-        
-        for(int v=0;v<V;v++)
-        {
-             if(graph[u][v] !=0 && spt[v]==false  && dist[u]+graph[u][v]<dist[v])
-                 {
-                    dist[v]=dist[u]+graph[u][v];
-
-                    parent[v]=u;
-                 }
-        }
-    }
-
-
-
-
-     cout<<endl<<endl;
-
-     cotu<<"parent  is : :  ";
-
-     for(int i=0;i<V;i++)
-     {
-         cout<<i<<"   "<<parent[i]
-     }
-
-
-    printSolution(dist);
-}
-
-
-
-
-
-
 
 
 
@@ -117,7 +78,7 @@ int main()
 
 
     int graph[V][V] =
-                     { 
+                    { 
                         { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
                         { 4, 0, 8, 0, 0, 0, 0, 11,0 },
                         { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
@@ -130,5 +91,15 @@ int main()
                     }; 
 
 
-                    dijkstraws(graph);
+
+
+
+
+
+
+    dijkstraw(graph,0);
+
+
+
+return 0;
 }
