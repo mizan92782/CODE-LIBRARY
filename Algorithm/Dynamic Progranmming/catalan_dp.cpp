@@ -1,31 +1,32 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int  catalan_number(int n)
+//https://www.youtube.com/watch?v=CMaZ69P1bAc
+//https://www.geeksforgeeks.org/program-nth-catalan-number/
+
+
+
+int CatalanNumber_rec(int n)
 {
-    long int catalan[n+1];
-    catalan[0]=catalan[1]=1;
-
-    for(int i=2;i<=n;i++)
-    {
-        catalan[i]=0;
-
-        for(int j=0;j<i;j++)
-        {
-            catalan[i]+=catalan[j]*catalan[i-j-1];
-        }
-    }
+      if(n<=1) return 1;
 
 
-  return catalan[n];
+      int catalan=0;
+
+      for(int i=0;i<n;i++)
+      {
+           catalan +=CatalanNumber_rec(i)*CatalanNumber_rec(n-i-1);
+      }
+
+
+      return catalan;
+
 
 }
 
-int main()
-{
-     
 
-cout<<catalan_number(5);
-     
+int main(){
 
+
+       cout<<"Catalan recursion : "<<CatalanNumber_rec(4);
 }
