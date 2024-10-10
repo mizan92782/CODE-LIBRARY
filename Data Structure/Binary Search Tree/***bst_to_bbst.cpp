@@ -209,17 +209,15 @@ Node* BalaceBst_util(vector<Node*>& nodes,int start,int last)
     
     // find root node,by bracktraking will get root node
 
-
-     //! ***creating balace bst root...
+     // ***creating balace bst root...
      Node* root= nodes[middle];
      
      root->left =BalaceBst_util(nodes,start,middle-1);
      root->right=BalaceBst_util(nodes,middle+1,last);
      
-     //! return root;
+     // return root;
     return root;
-
-}
+    }
 
 
 Node* BalaceBst(Node* root){

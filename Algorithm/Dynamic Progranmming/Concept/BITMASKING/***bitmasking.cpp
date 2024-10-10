@@ -29,7 +29,7 @@ void subsetPrint(int n)
 
 void bitmasking(vector<int>vec)
 {
-   //** set set bit for or operation to find bit value;
+   //** set bit for or operation to find bit value;
    int x=1;
 
    int bit=0;
