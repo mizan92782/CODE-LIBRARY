@@ -9,6 +9,7 @@
 
 
 4. for print true/false .using boolalpha
+
    cout << boolalpha;
   for (std::size_t i=0; i<foo.size(); ++i)
     std::cout << foo.test(i) << '\n';
