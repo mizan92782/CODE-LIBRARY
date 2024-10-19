@@ -133,6 +133,7 @@ void deleteNode(Node** head)
         // If it's not even, move to the next node.
         deleteNode(&((*head)->next));
     }
+    
 }
 
 

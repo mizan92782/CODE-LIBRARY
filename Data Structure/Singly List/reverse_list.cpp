@@ -70,7 +70,7 @@ Node* reverseList1(Node* head)
      if(head==NULL) return NULL;
       
    
-       Node* temp=NULL;
+     Node* temp=NULL;
      while (head!=NULL)
      {
         
@@ -90,13 +90,32 @@ Node* reverseList1(Node* head)
 
 
 
+Node* reverseList(Node* head) {
+    if (head == NULL || head->next == NULL)
+        return head;
+
+    // reverse the rest of linked list and put the first element at the end 
+    Node* rest = reverseList(head->next);
+  
+      // Make the current head as last node of remaining linked list
+    head->next->next = head;
+
+      // Update next of current head to NULL
+    head->next = NULL;
+
+       // Return the reversed linked list
+    return rest;
+}
 
 
 
 
 
 
- Node* Rev(Node* head)
+
+
+
+Node* Rev(Node* head)
 {
     if(head == NULL || head->next == NULL) 
         return head;

@@ -90,7 +90,8 @@ bool isp(Node** left,Node* right)
         
          *left=(*left)->next;
          return check;
-    }
+}
+
     bool isPalindrome(Node *head)
     {
        return isp(&head,head);

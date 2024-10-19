@@ -42,6 +42,8 @@ void printsubarray(int arr[],int n,int start,int end)
         
      }
  }
+
+ 
 int main()
 {
      int arr[]={1,2,3,4};
