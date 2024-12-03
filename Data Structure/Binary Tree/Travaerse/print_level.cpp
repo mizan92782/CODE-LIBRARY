@@ -128,6 +128,35 @@ void levelOrder_stl(Node *root)
             cout << curr->data << " ";
         }
     }
+
+
+
+
+//************** importanti : push null is not safe */
+void levelorder(){
+
+     queue<TreeNode*> que;  // For level-order traversal
+        que.push(root);
+
+        while(!que.empty()) {
+            int levelSize = que.size();  // Number of nodes at the current level
+         
+
+            for(int i = 0; i < levelSize; i++) {
+                TreeNode* node = que.front();
+                que.pop();
+
+                
+                // Push the children to the queue
+                if(node->left) que.push(node->left);
+                if(node->right) que.push(node->right);
+            }
+
+        }
+
+
+
+
 }
  
 int main()

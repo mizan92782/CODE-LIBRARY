@@ -4,7 +4,7 @@ using namespace std;
 
 void sieveaOfErathostes(int n)
 {
-    bool prime[n+1];
+     bool prime[n+1];
      memset(prime, true, sizeof(prime)); 
 
 
@@ -12,7 +12,7 @@ void sieveaOfErathostes(int n)
     {
          if(prime[p]==true)
          {
-               
+                
                for(int m=p*p;m<=n;m=m+p)
                {
                 prime[m]=false;
