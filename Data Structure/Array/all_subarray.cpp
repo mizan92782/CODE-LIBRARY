@@ -49,7 +49,7 @@ int main()
      int arr[]={1,2,3,4};
      int n=8;
 
-     printsubarray(arr,4,0,0);
+     printsubarray2(arr,4);
 
        
 }
