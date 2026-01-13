@@ -1,0 +1,42 @@
+//DSA
+https://www.geeksforgeeks.org/dsa-tutorial-learn-data-structures-and-algorithms/
+
+
+// all tree
+https://www.geeksforgeeks.org/tree-data-structure/
+
+
+linklist :
+
+https://www.geeksforgeeks.org/linked-list-data-structure/
+ https://chatgpt.com/share/682baae1-8494-8005-9068-f518d8618284
+
+
+
+
+ binary tree
+ https://www.geeksforgeeks.org/binary-tree-data-structure/
+ https://chatgpt.com/share/683a964d-c418-8005-bcd8-04c9359faa14
+ https://www.geeksforgeeks.org/top-50-tree-coding-problems-for-interviews/
+
+
+  binary searc tree
+  https://chatgpt.com/c/683f35bc-52bc-8005-bba0-0ca6247f9f2a
+  https://www.geeksforgeeks.org/binary-search-tree-data-structure/
+
+
+  Graph
+  https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
+  //all graph problem
+  https://www.geeksforgeeks.org/graph-data-structure/   
+  //graph bfs problem
+  https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
+
+
+
+  union find algorithms
+  https://chatgpt.com/share/6841487b-2c6c-8005-a0a1-989a5b6ecb2e
+
+ //logic building 
+ https://www.geeksforgeeks.org/logic-building-problems/
+ https://www.geeksforgeeks.org/top-problems-on-logic-building-problems-for-interviews/
