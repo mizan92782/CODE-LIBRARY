@@ -1,0 +1,47 @@
+
+
+************ fout direction move: 
+https://www.geeksforgeeks.org/minimum-time-required-so-that-all-oranges-become-rotten/
+
+
+
+                                   below   right    up     left
+vector<vector<int>> directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+
+suppose i=3,j=2
+for (const auto& dir : directions) {
+                        int x = i + dir[0];
+                        int y = j + dir[1];
+                       
+                    }
+
+
+
+************ check given i,j position is in matrix:
+bool isSafe(int x, int y, int n, int m) {
+    return 0 <= x && x < n && 0 <= y && y < m;
+}
+
+
+
+
+
+
+
+
+
+*********** make nth element all perdecore small then it and all succesort greater than it............
+int main()
+{
+
+    // *https://www.geeksforgeeks.org/stdnth_element-in-cpp/
+     vector<int>vec{5,4,7,2,699,3,6,22};
+     
+     nth_element(vec.begin(),vec.begin()+4,vec.end());
+
+    
+    for(auto it :vec)
+    {
+        cout<<it<<endl;
+    }
+}
