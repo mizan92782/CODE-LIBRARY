@@ -1,0 +1,16 @@
+Student(...)
+    ↓
+__new__()
+    ↓
+Object Created
+    ↓
+__init__()
+    ↓
+Ready Object
+
+
+
+
+*** when we called __init__ ,in behind it also called  __new_-
+
+*** new create a object of a class and init return the object

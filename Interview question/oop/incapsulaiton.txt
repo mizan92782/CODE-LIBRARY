@@ -1,0 +1,16 @@
+
+>> Data member==========
+
+1. public  : name : accessible from anywher
+2. protected: _nmae : accessible from also subclass
+3. private : __name : only accessible in class
+
+
+in dat method:
+
+1. method : public
+2. _methd  ; protected
+3.__method : private
+
+
+

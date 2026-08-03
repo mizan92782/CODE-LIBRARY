@@ -1,0 +1,25 @@
+ like java python access modifire are not strick
+ rathe the can access if also it protected or private by mangled rules
+
+
+ Exactly! Python's access control is convention-based, not enforcement-based.
+
+In Java:
+
+protected → strictly accessible only within class and subclasses
+
+private → strictly blocked outside the class, compiler throws error
+
+In Python:
+
+_protected → just a naming convention, no real restriction
+
+__private → only name mangling (_ClassName__attr), still accessible if you know the mangled name
+
+Python follows the philosophy:
+
+"We are all consenting adults here"
+
+meaning Python trusts the developer to follow conventions rather than enforcing strict rules like Java or C++.
+
+So in Python, access modifiers are more about readability and intent than actual security or enforcement.
